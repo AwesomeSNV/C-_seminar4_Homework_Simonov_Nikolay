@@ -6,18 +6,18 @@
 
 // 2, 4 -> 16
 
-Console.WriteLine("Введите число A: ");
-int A = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите число B: ");
-int B = int.Parse(Console.ReadLine()!);
-int exp = GetPow(A, B);
-Console.WriteLine($"Получивщееся число: {exp}");
+// Console.WriteLine("Введите число A: ");
+// int A = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите число B: ");
+// int B = int.Parse(Console.ReadLine()!);
+// int exp = GetPow(A, B);
+// Console.WriteLine($"Получивщееся число: {exp}");
 
-int GetPow (int A, int B)
-{
-    double result = Math.Pow(A, B);
-    return Convert.ToInt32(result);
-}    
+// int GetPow (int A, int B)
+// {
+//     double result = Math.Pow(A, B);
+//     return Convert.ToInt32(result);
+// }    
 
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
@@ -26,6 +26,25 @@ int GetPow (int A, int B)
 // 82 -> 10
 
 // 9012 -> 12
+
+Console.WriteLine("Введите число N: ");
+int N = int.Parse(Console.ReadLine()!);
+int Sum = SumNum(N);
+Console.WriteLine($"Сумма цифр в числе {N} равняется {Sum}.");
+
+int SumNum (int N)
+{
+    int NumLength = Convert.ToString(N).Length;
+    int next = 0;
+    int result = 0;
+    for(int i = 0; i < NumLength; i++)
+    {
+        next = N - N % 10;
+        result = result + (N - next);
+        N = N / 10;
+    }
+    return result;
+}
 
 // Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
