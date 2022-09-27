@@ -6,6 +6,18 @@
 
 // 2, 4 -> 16
 
+Console.WriteLine("Введите число A: ");
+int A = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите число B: ");
+int B = int.Parse(Console.ReadLine()!);
+int exp = GetPow(A, B);
+Console.WriteLine($"Получивщееся число: {exp}");
+
+int GetPow (int A, int B)
+{
+    double result = Math.Pow(A, B);
+    return Convert.ToInt32(result);
+}    
 
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
