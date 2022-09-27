@@ -27,27 +27,48 @@
 
 // 9012 -> 12
 
-Console.WriteLine("Введите число N: ");
-int N = int.Parse(Console.ReadLine()!);
-int Sum = SumNum(N);
-Console.WriteLine($"Сумма цифр в числе {N} равняется {Sum}.");
+// Console.WriteLine("Введите число N: ");
+// int N = int.Parse(Console.ReadLine()!);
+// int Sum = SumNum(N);
+// Console.WriteLine($"Сумма цифр в числе {N} равняется {Sum}.");
 
-int SumNum (int N)
-{
-    int NumLength = Convert.ToString(N).Length;
-    int next = 0;
-    int result = 0;
-    for(int i = 0; i < NumLength; i++)
-    {
-        next = N - N % 10;
-        result = result + (N - next);
-        N = N / 10;
-    }
-    return result;
-}
+// int SumNum (int N)
+// {
+//     int NumLength = Convert.ToString(N).Length;
+//     int next = 0;
+//     int result = 0;
+//     for(int i = 0; i < NumLength; i++)
+//     {
+//         next = N - N % 10;
+//         result = result + (N - next);
+//         N = N / 10;
+//     }
+//     return result;
+// }
 
 // Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 
 // 6, 1, 33 -> [6, 1, 33]
+
+int[] array = FillArray();
+PrintArray(array);
+
+int[] FillArray()
+{
+    int[] array = new int[8];
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(-1000,1000);
+    }
+    return array;
+}
+
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($" |{array[i]}| ");
+    }
+}
